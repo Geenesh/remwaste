@@ -20,7 +20,7 @@
   --icon-background: #0055ff;
 }
 
-[data-theme="dark"] {
+.dark {
   --background-color: #2b2b2b;
   --text-color: #d1d5db;
   --primary-color: #4f83cc;

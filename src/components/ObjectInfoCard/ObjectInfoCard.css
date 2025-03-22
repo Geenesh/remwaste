@@ -20,11 +20,24 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 16px var(--card-shadow);
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
 }
 
 .card:hover {
     transform: translateY(-3px);
+}
+
+.card.selected {
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 8px var(--primary-color);
+}
+
+.card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--button-hover);
 }
 
 .card-header {
@@ -51,7 +64,7 @@ body {
 .card-badges {
     display: flex;
     gap: 8px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .badge {
@@ -77,6 +90,10 @@ body {
 }
 
 .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
     padding: 10px;
 }
 
@@ -179,10 +196,10 @@ body {
 }
 
 .action-button {
+    margin-top: auto;
     display: flex;
     width: 100%;
     padding: 14px;
-    margin-top: 20px;
     background-color: #0055ff;
     color: white;
     border: none;
@@ -199,6 +216,11 @@ body {
 
 .action-button:hover {
     background-color: #0044cc;
+}
+
+.action-button:disabled {
+    background-color: #d1d5db;
+    cursor: not-allowed;
 }
 
 @media (max-width: 768px) {

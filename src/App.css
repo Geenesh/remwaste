@@ -58,6 +58,61 @@
   background-color: var(--button-hover);
 }
 
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.button {
+  display: flex;
+  width: 48%; /* Adjust width for spacing between buttons */
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.button:hover {
+  background-color: #0044cc;
+  color: white;
+}
+
+.button.disabled {
+  background-color: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.button.outlined {
+  background-color: transparent;
+  border: 2px solid #0055ff;
+  color: #0055ff;
+}
+
+.button.outlined:hover {
+  background-color: #e6f0ff;
+  color: #0044cc;
+}
+
+.button.filled {
+  background-color: #0055ff;
+  color: white;
+  border: none;
+}
+
+.button.filled:hover {
+  background-color: #0044cc;
+}
+
 @media (max-width: 1024px) {
   .skips-grid {
     grid-template-columns: repeat(2, 1fr);
