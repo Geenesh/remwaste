@@ -10,16 +10,15 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f5f5f7;
     padding: 20px;
 }
 
 .card {
     width: 100%;
     max-width: 420px;
-    background-color: white;
+    background-color: var(--card-background);
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 16px var(--card-shadow);
     overflow: hidden;
     transition: transform 0.3s ease;
 }
@@ -31,10 +30,10 @@ body {
 .card-header {
     position: relative;
     padding: 14px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--button-hover);
 }
 
-.card-title-container{
+.card-title-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,7 +43,7 @@ body {
 .card-title {
     font-size: 22px;
     font-weight: 700;
-    color: #111;
+    color: var(--text-color);
     margin-bottom: 6px;
     line-height: 1.2;
 }
@@ -52,6 +51,7 @@ body {
 .card-badges {
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
 }
 
 .badge {
@@ -91,9 +91,9 @@ body {
 .section-title {
     font-size: 14px;
     font-weight: 600;
-    color: #555;
+    color: var(--text-color);
     margin-bottom: 16px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--button-hover);
     padding-bottom: 8px;
 }
 
@@ -115,7 +115,7 @@ body {
 
 .info-value {
     font-size: 15px;
-    color: #111;
+    color: var(--text-color);
     font-weight: 500;
 }
 
@@ -133,7 +133,7 @@ body {
 }
 
 .price-container {
-    background-color: #fafafa;
+    background-color: var(--card-background);
     border-radius: 8px;
     padding: 10px;
     margin-top: 8px;
@@ -146,36 +146,36 @@ body {
 }
 
 .price-row:not(:last-child) {
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--button-hover);
 }
 
 .price-label {
     font-size: 14px;
-    color: #555;
+    color: var(--text-color);
 }
 
 .price-value {
     font-size: 14px;
-    color: #333;
+    color: var(--text-color);
     font-weight: 500;
 }
 
 .total-row {
     margin-top: 6px;
     padding-top: 10px;
-    border-top: 2px solid #f0f0f0;
+    border-top: 2px solid var(--button-hover);
 }
 
 .total-label {
     font-size: 15px;
     font-weight: 600;
-    color: #111;
+    color: var(--text-color);
 }
 
 .total-value {
     font-size: 16px;
     font-weight: 700;
-    color: #0055ff;
+    color: var(--text-color);
 }
 
 .action-button {
@@ -194,7 +194,7 @@ body {
     transition: background-color 0.2s ease;
     align-items: center;
     justify-content: center;
-    gap: 8px
+    gap: 8px;
 }
 
 .action-button:hover {
@@ -240,4 +240,8 @@ body {
         padding: 12px;
         font-size: 14px;
     }
+}
+
+.price-label, .price-value, .total-label, .total-value {
+    color: var(--text-color);
 }

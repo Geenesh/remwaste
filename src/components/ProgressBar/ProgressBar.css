@@ -1,0 +1,74 @@
+.progress-bar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 80px;
+}
+
+.step-item.current {
+  color: var(--primary-color);
+}
+
+.step-item.active {
+  color: var(--text-color);
+}
+
+.step-item.inactive {
+  color: var(--secondary-color);
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--icon-background);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.icon-container.current {
+  background-color: var(--primary-color);
+  color: var(--card-background);
+}
+
+.icon-container.active {
+  background-color: var(--primary-color);
+  color: var(--card-background);
+}
+
+.icon-container.inactive {
+  background-color: var(--card-background);
+  color: var(--secondary-color);
+}
+
+.step-label {
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.connector-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--secondary-color);
+  margin: 0 0.5rem 1.5rem 0;
+}
+
+.connector-fill {
+  background-color: var(--primary-color);
+  height: 100%;
+  transition: width 0.3s ease;
+}
