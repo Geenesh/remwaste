@@ -1,7 +1,7 @@
 import React from "react";
 import "./ObjectInfoCard.css";
 import { SkipHire } from "../../api/skipApi";
-import { CheckCircle, AlertCircle, MoveRight } from "lucide-react";
+import { CheckCircle, AlertCircle } from "lucide-react";
 
 interface ObjectCardProps {
   skip: SkipHire;
@@ -17,14 +17,11 @@ const ObjectInfoCard: React.FC<ObjectCardProps> = ({
   return (
     <div className={`card ${isSelected ? "selected" : ""}`} onClick={onSelect}>
       <div className="card-header">
-        {/* 
-          // Option to add image here
           <img
-            src=""
+            src="https://www.reliableskip.com/wp-content/uploads/2022/10/skip-size.jpeg"
             alt="Placeholder"
             className="card-image"
           /> 
-        */}
         <div className="card-title-container">
           <h2 className="card-title">{skip.size} Yard Skip</h2>
           <div className="info-item">
@@ -71,13 +68,6 @@ const ObjectInfoCard: React.FC<ObjectCardProps> = ({
             </div>
           </div>
         </div>
-        {!isSelected ? (
-          <button className="button outlined" style={{width: "100%"}}>
-            Select Skip <MoveRight className="icon" size={20} />
-          </button>
-        ) : (
-          <button className="action-button">Selected </button>
-        )}
       </div>
     </div>
   );
