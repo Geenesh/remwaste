@@ -71,10 +71,13 @@ const ObjectInfoCard: React.FC<ObjectCardProps> = ({
             </div>
           </div>
         </div>
-
-        <button className="action-button">
-          Select Skip <MoveRight className="icon" size={20} />
-        </button>
+        {!isSelected ? (
+          <button className="button outlined" style={{width: "100%"}}>
+            Select Skip <MoveRight className="icon" size={20} />
+          </button>
+        ) : (
+          <button className="action-button">Selected </button>
+        )}
       </div>
     </div>
   );
