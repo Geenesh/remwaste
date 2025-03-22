@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import "./ObjectInfoCard.css";
 import { SkipHire } from "../../api/skipApi";
 import { CheckCircle, AlertCircle, MoveRight } from "lucide-react";
@@ -8,15 +8,17 @@ interface ObjectCardProps {
 }
 
 const ObjectInfoCard: React.FC<ObjectCardProps> = ({ skip }) => {
+  const totalPrice = skip.price_before_vat + skip.vat;
+
   return (
     <div className="card">
       <div className="card-header">
         <div className="card-title-container">
-        <h2 className="card-title">{skip.size} Yard Skip</h2>
-        <div className="info-item">
-          <div className="info-label">Hire Period</div>
-          <div className="info-value">{skip.hire_period_days} days</div>
-        </div>
+          <h2 className="card-title">{skip.size} Yard Skip</h2>
+          <div className="info-item">
+            <div className="info-label">Hire Period</div>
+            <div className="info-value">{skip.hire_period_days} days</div>
+          </div>
         </div>
         <div className="card-badges">
           {skip.allowed_on_road && (
@@ -51,9 +53,7 @@ const ObjectInfoCard: React.FC<ObjectCardProps> = ({ skip }) => {
             </div>
             <div className="price-row">
               <span className="total-label">Total Price</span>
-              <span className="total-value">
-                £{skip.price_before_vat + skip.vat}
-              </span>
+              <span className="total-value">£{totalPrice}</span>
             </div>
           </div>
         </div>
@@ -66,4 +66,4 @@ const ObjectInfoCard: React.FC<ObjectCardProps> = ({ skip }) => {
   );
 };
 
-export default ObjectInfoCard;
+export default memo(ObjectInfoCard);

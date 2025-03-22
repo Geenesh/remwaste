@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import {
   MapPin,
   Trash2,
@@ -44,12 +44,11 @@ const ProgressBar = ({ currentStep = 3 }) => {
             </div>
 
             {index < steps.length - 1 && (
-              <div className="connector-line">
-                <div
-                  className="connector-fill"
-                  style={{ width: isActive ? "100%" : "0%" }}
-                />
-              </div>
+              <div
+                className={`connector-line ${
+                  isActive ? "connector-active" : "connector-inactive"
+                }`}
+              />
             )}
           </React.Fragment>
         );
@@ -58,4 +57,4 @@ const ProgressBar = ({ currentStep = 3 }) => {
   );
 };
 
-export default ProgressBar;
+export default memo(ProgressBar);

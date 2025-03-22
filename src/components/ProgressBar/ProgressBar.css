@@ -67,6 +67,14 @@
   margin: 0 0.5rem 1.5rem 0;
 }
 
+.connector-line.connector-active {
+  background-color: var(--primary-color);
+}
+
+.connector-line.connector-inactive {
+  background-color: var(--secondary-color);
+}
+
 .connector-fill {
   background-color: var(--primary-color);
   height: 100%;
