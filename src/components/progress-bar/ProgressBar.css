@@ -1,12 +1,14 @@
 .progress-bar-container {
   display: flex;
   align-items: center;
-  width: 70%;
+  justify-content: center;
+  width: 100%;
   margin-bottom: 2.5rem;
   flex-wrap: nowrap;
   overflow-x: scroll;
   scrollbar-width: thin;
   -ms-overflow-style: none;
+  max-width: 500px;
 }
 
 .progress-bar-container::-webkit-scrollbar {
@@ -82,9 +84,22 @@
   background-color: var(--secondary-color);
 }
 
+@media (max-width: 1200px) {
+  .progress-bar-container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 992px) {
+  .progress-bar-container {
+    max-width: 80%;
+  }
+}
+
 @media (max-width: 768px) {
   .progress-bar-container {
     margin-bottom: 1.5rem;
+    max-width: 75%;
   }
 
   .step-label {
@@ -92,9 +107,24 @@
   }
 }
 
+@media (max-width: 576px) {
+  .progress-bar-container {
+    max-width: 75%;
+  }
+
+  .step-item {
+    min-width: 70px;
+  }
+
+  .step-label {
+    font-size: 0.6rem;
+  }
+}
+
 @media (max-width: 320px) {
   .progress-bar-container {
     margin-bottom: 1rem;
+    max-width: 75%;
   }
 
   .step-item {
@@ -102,6 +132,6 @@
   }
 
   .step-label {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
   }
 }
