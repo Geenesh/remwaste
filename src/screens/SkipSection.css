@@ -1,0 +1,113 @@
+.content {
+    max-width: 1200px;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.skips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.button {
+    display: flex;
+    width: 48%;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.button.disabled {
+    background-color: #d1d5db;
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.button.outlined {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.button.outlined:hover {
+    background-color: #e6f0ff;
+    color: var(--primary-color);
+}
+
+.button.filled {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.button.filled:hover {
+    background-color: var(--primary-color);
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 1024px) {
+    .skips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .skips-grid {
+        grid-template-columns: 0.75fr;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .skips-grid {
+        grid-template-columns: 0.75fr;
+        gap: 10px
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .button {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
