@@ -8,7 +8,6 @@
   overflow-x: scroll;
   scrollbar-width: thin;
   -ms-overflow-style: none;
-  max-width: 500px;
 }
 
 .progress-bar-container::-webkit-scrollbar {
